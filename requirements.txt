@@ -1,0 +1,6 @@
+Flask==0.10.1
+flask-sqlalchemy
+Werkzeug==0.16
+pytest
+coverage
+pytest-cov

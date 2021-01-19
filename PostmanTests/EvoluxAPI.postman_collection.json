@@ -1,0 +1,256 @@
+{
+	"info": {
+		"_postman_id": "b8be4983-c1b7-479a-8059-03580901a7cf",
+		"name": "EvoluxAPI",
+		"description": "# Introduction\nWhat does your API do?\n\n# Overview\nThings that the developers should know about\n\n# Authentication\nWhat is the preferred way of using the API?\n\n# Error Codes\nWhat errors and status codes can a user expect?\n\n# Rate limit\nIs there a limit to the number of requests an user can send?",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Authentication",
+			"item": [
+				{
+					"name": "Login",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/authentication/login?username=admin&pass=admin",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"authentication",
+								"login"
+							],
+							"query": [
+								{
+									"key": "username",
+									"value": "admin"
+								},
+								{
+									"key": "pass",
+									"value": "admin"
+								}
+							]
+						},
+						"description": "Login in API"
+					},
+					"response": []
+				},
+				{
+					"name": "Logout",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{baseUrl}}/authentication/logout",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"authentication",
+								"logout"
+							]
+						},
+						"description": "Logout in API"
+					},
+					"response": [
+						{
+							"name": "Default",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "authentication/logout",
+									"host": [
+										"authentication"
+									],
+									"path": [
+										"logout"
+									]
+								}
+							},
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": ""
+						}
+					]
+				}
+			],
+			"description": "Requests for authentication in the api."
+		},
+		{
+			"name": "CRUD Numbers",
+			"item": [
+				{
+					"name": "Add Number",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/number/addNumber?value=558491234-4321&monthyPrice=0.03&setupPrice=3.40&currency=U$",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"number",
+								"addNumber"
+							],
+							"query": [
+								{
+									"key": "value",
+									"value": "558491234-4321"
+								},
+								{
+									"key": "monthyPrice",
+									"value": "0.03"
+								},
+								{
+									"key": "setupPrice",
+									"value": "3.40"
+								},
+								{
+									"key": "currency",
+									"value": "U$"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Numbers",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/number/getAllNumbers",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"number",
+								"getAllNumbers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get One Number",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/number/getNumberById/1",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"number",
+								"getNumberById",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit Number",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/number/editNumber/1?value=558491234-4321&monthyPrice=0.03&setupPrice=3.40&currency=U$'",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"number",
+								"editNumber",
+								"1"
+							],
+							"query": [
+								{
+									"key": "value",
+									"value": "558491234-4321"
+								},
+								{
+									"key": "monthyPrice",
+									"value": "0.03"
+								},
+								{
+									"key": "setupPrice",
+									"value": "3.40"
+								},
+								{
+									"key": "currency",
+									"value": "U$'"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Number",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/number/deleteNumber/1",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"number",
+								"deleteNumber",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "http://localhost:5000"
+		}
+	]
+}
